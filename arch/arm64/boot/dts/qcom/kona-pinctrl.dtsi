@@ -229,6 +229,26 @@
 					bias-pull-down;
 				};
 			};
+
+			qupv3_se12_2uart_init: qupv3_se12_2uart_init {
+				mux {
+					pins = "gpio34", "gpio35";
+					drive-strength = <2>;
+					bias-pull-down;
+				};
+
+				config34 {
+					pins = "gpio34";
+					drive-strength = <2>;
+					bias-pull-up;
+				};
+
+				config35 {
+					pins = "gpio35";
+					drive-strength = <2>;
+					bias-pull-down;
+				};
+			};
 		};
 
 		qupv3_se17_4uart_pins: qupv3_se17_4uart_pins {
