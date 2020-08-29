@@ -1194,7 +1194,8 @@ static void _sde_sspp_setup_vig(struct sde_mdss_cfg *sde_cfg,
 			sde_cfg->true_inline_dwnscale_rt_denom;
 		sblk->in_rot_maxdwnscale_nrt =
 			sde_cfg->true_inline_dwnscale_nrt;
-		sblk->in_rot_maxheight =
+		sblk->in_rot_maxheight = sde_cfg->inline_linewidth ?
+				sde_cfg->inline_linewidth :
 			MAX_PRE_ROT_HEIGHT_INLINE_ROT_DEFAULT;
 		sblk->in_rot_prefill_fudge_lines =
 			sde_cfg->true_inline_prefill_fudge_lines;
@@ -4222,6 +4223,7 @@ static int _sde_hardware_pre_caps(struct sde_mdss_cfg *sde_cfg, uint32_t hw_rev)
 		sde_cfg->true_inline_prefill_fudge_lines = 2;
 		sde_cfg->true_inline_prefill_lines_nv12 = 32;
 		sde_cfg->true_inline_prefill_lines = 48;
+		sde_cfg->update_tcsr_disp_glitch = true;
 	} else if (IS_SDMTRINKET_TARGET(hw_rev)) {
 		sde_cfg->has_cwb_support = true;
 		sde_cfg->has_qsync = true;

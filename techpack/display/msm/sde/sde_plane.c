@@ -2403,7 +2403,7 @@ static int _sde_atomic_check_decimation_scaler(struct drm_plane_state *state,
 	uint32_t deci_w, deci_h, src_deci_w, src_deci_h;
 	uint32_t scaler_src_w, scaler_src_h;
 	uint32_t max_downscale_num, max_downscale_denom;
-	uint32_t max_upscale, max_linewidth;
+	uint32_t max_upscale, max_linewidth = 0;
 	bool inline_rotation, rt_client;
 	struct drm_crtc *crtc;
 	struct drm_crtc_state *new_cstate;
@@ -2430,7 +2430,14 @@ static int _sde_atomic_check_decimation_scaler(struct drm_plane_state *state,
 	}
 
 	max_upscale = psde->pipe_sblk->maxupscale;
-	max_linewidth = psde->pipe_sblk->maxlinewidth;
+
+	if ((scaler_src_w != state->crtc_w) || (scaler_src_h != state->crtc_h))
+		max_linewidth = inline_rotation ?
+				 psde->pipe_sblk->in_rot_maxheight :
+				 kms->catalog->scaling_linewidth;
+
+	if (!max_linewidth)
+		max_linewidth = psde->pipe_sblk->maxlinewidth;
 
 	crtc = state->crtc;
 	new_cstate = drm_atomic_get_new_crtc_state(state->state, crtc);
