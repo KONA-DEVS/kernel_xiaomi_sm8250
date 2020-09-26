@@ -226,7 +226,7 @@ void OnInit_InvalidNode(char *strIniFile)
 
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
 		for (j = 0; j < test_data.screen_param.rx_num; j++) {
-			snprintf(strTemp, PAGE_SIZE, "InvalidNode[%d][%d]", (i + 1), (j + 1));
+			snprintf(strTemp, sizeof(strTemp), "InvalidNode[%d][%d]", (i + 1), (j + 1));
 
 			GetPrivateProfileString("INVALID_NODE", strTemp, "1", str, strIniFile);
 			if (fts_atoi(str) == 0) {
@@ -246,7 +246,7 @@ void OnInit_InvalidNode(char *strIniFile)
 
 	for (i = 0; i < 2; i++) {
 		for (j = 0; j < test_data.screen_param.rx_num; j++) {
-			snprintf(strTemp, PAGE_SIZE, "InvalidNodeS[%d][%d]", (i + 1), (j + 1));
+			snprintf(strTemp, sizeof(strTemp), "InvalidNodeS[%d][%d]", (i + 1), (j + 1));
 			GetPrivateProfileString("INVALID_NODES", strTemp, "1", str, strIniFile);
 			if (fts_atoi(str) == 0) {
 				test_data.mcap_detail_thr.invalid_node_sc[i][j] = 0;
@@ -290,9 +290,9 @@ void OnInit_DThreshold_RawDataTest(char *strIniFile)
 	}
 
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "RawData_Max_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "RawData_Max_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "111", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -329,9 +329,9 @@ void OnInit_DThreshold_RawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "RawData_Min_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "RawData_Min_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -363,9 +363,9 @@ void OnInit_DThreshold_RawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "RawData_Max_Low_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "RawData_Max_Low_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -395,9 +395,9 @@ void OnInit_DThreshold_RawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "RawData_Min_Low_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "RawData_Min_Low_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -436,9 +436,9 @@ void OnInit_DThreshold_RawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "RawData_Max_High_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "RawData_Max_High_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -461,9 +461,9 @@ void OnInit_DThreshold_RawDataTest(char *strIniFile)
 
 
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "RawData_Min_High_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "RawData_Min_High_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -511,9 +511,9 @@ void OnInit_DThreshold_SCapRawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 2; i++) {
-		snprintf(str, PAGE_SIZE, "ScapRawData_OFF_Max_%d", (i + 1));
+		snprintf(str, sizeof(str), "ScapRawData_OFF_Max_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -540,9 +540,9 @@ void OnInit_DThreshold_SCapRawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 2; i++) {
-		snprintf(str, PAGE_SIZE, "ScapRawData_OFF_Min_%d", (i + 1));
+		snprintf(str, sizeof(str), "ScapRawData_OFF_Min_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -576,9 +576,9 @@ void OnInit_DThreshold_SCapRawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 2; i++) {
-		snprintf(str, PAGE_SIZE, "ScapRawData_ON_Max_%d", (i + 1));
+		snprintf(str, sizeof(str), "ScapRawData_ON_Max_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -605,9 +605,9 @@ void OnInit_DThreshold_SCapRawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 2; i++) {
-		snprintf(str, PAGE_SIZE, "ScapRawData_ON_Min_%d", (i + 1));
+		snprintf(str, sizeof(str), "ScapRawData_ON_Min_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -655,9 +655,9 @@ void OnInit_DThreshold_SCapCbTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 2; i++) {
-		snprintf(str, PAGE_SIZE, "ScapCB_ON_Max_%d", (i + 1));
+		snprintf(str, sizeof(str), "ScapCB_ON_Max_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -684,9 +684,9 @@ void OnInit_DThreshold_SCapCbTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 2; i++) {
-		snprintf(str, PAGE_SIZE, "ScapCB_ON_Min_%d", (i + 1));
+		snprintf(str, sizeof(str), "ScapCB_ON_Min_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -719,9 +719,9 @@ void OnInit_DThreshold_SCapCbTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 2; i++) {
-		snprintf(str, PAGE_SIZE, "ScapCB_OFF_Max_%d", (i + 1));
+		snprintf(str, sizeof(str), "ScapCB_OFF_Max_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -748,9 +748,9 @@ void OnInit_DThreshold_SCapCbTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 2; i++) {
-		snprintf(str, PAGE_SIZE, "ScapCB_OFF_Min_%d", (i + 1));
+		snprintf(str, sizeof(str), "ScapCB_OFF_Min_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -794,9 +794,9 @@ void OnInit_DThreshold_PanelDifferTest(char *strIniFile)
 	}
 
 	for (i = 0; i < TX_NUM_MAX; i++) {
-		snprintf(str, PAGE_SIZE, "Panel_Differ_Max_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "Panel_Differ_Max_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -827,9 +827,9 @@ void OnInit_DThreshold_PanelDifferTest(char *strIniFile)
 	}
 
 	for (i = 0; i < TX_NUM_MAX; i++) {
-		snprintf(str, PAGE_SIZE, "Panel_Differ_Min_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "Panel_Differ_Min_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -878,9 +878,9 @@ void OnInit_DThreshold_RxLinearityTest(char *strIniFile)
 	}
 
 	for (i = 0; i < test_data.screen_param.used_max_tx_num; i++) {
-		snprintf(str, PAGE_SIZE, "Rx_Linearity_Max_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "Rx_Linearity_Max_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "111", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -927,9 +927,9 @@ void OnInit_DThreshold_TxLinearityTest(char *strIniFile)
 	}
 
 	for (i = 0; i < test_data.screen_param.used_max_tx_num; i++) {
-		snprintf(str, PAGE_SIZE, "Tx_Linearity_Max_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "Tx_Linearity_Max_Tx%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "111", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -976,9 +976,9 @@ void OnInit_DThreshold_ForceTouch_SCapRawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 1; i++) {
-		snprintf(str, PAGE_SIZE, "ForceTouch_ScapRawData_OFF_Max_%d", (i + 1));
+		snprintf(str, sizeof(str), "ForceTouch_ScapRawData_OFF_Max_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1004,9 +1004,9 @@ void OnInit_DThreshold_ForceTouch_SCapRawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 1; i++) {
-		snprintf(str, PAGE_SIZE, "ForceTouch_ScapRawData_OFF_Min_%d", (i + 1));
+		snprintf(str, sizeof(str), "ForceTouch_ScapRawData_OFF_Min_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1038,9 +1038,9 @@ void OnInit_DThreshold_ForceTouch_SCapRawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 1; i++) {
-		snprintf(str, PAGE_SIZE, "ForceTouch_ScapRawData_ON_Max_%d", (i + 1));
+		snprintf(str, sizeof(str), "ForceTouch_ScapRawData_ON_Max_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1066,9 +1066,9 @@ void OnInit_DThreshold_ForceTouch_SCapRawDataTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 1; i++) {
-		snprintf(str, PAGE_SIZE, "ForceTouch_ScapRawData_ON_Min_%d", (i + 1));
+		snprintf(str, sizeof(str), "ForceTouch_ScapRawData_ON_Min_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1113,9 +1113,9 @@ void OnInit_DThreshold_ForceTouch_SCapCbTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 1; i++) {
-		snprintf(str, PAGE_SIZE, "ForceTouch_ScapCB_ON_Max_%d", (i + 1));
+		snprintf(str, sizeof(str), "ForceTouch_ScapCB_ON_Max_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1141,9 +1141,9 @@ void OnInit_DThreshold_ForceTouch_SCapCbTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 1; i++) {
-		snprintf(str, PAGE_SIZE, "ForceTouch_ScapCB_ON_Min_%d", (i + 1));
+		snprintf(str, sizeof(str), "ForceTouch_ScapCB_ON_Min_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1175,9 +1175,9 @@ void OnInit_DThreshold_ForceTouch_SCapCbTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 1; i++) {
-		snprintf(str, PAGE_SIZE, "ForceTouch_ScapCB_OFF_Max_%d", (i + 1));
+		snprintf(str, sizeof(str), "ForceTouch_ScapCB_OFF_Max_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1203,9 +1203,9 @@ void OnInit_DThreshold_ForceTouch_SCapCbTest(char *strIniFile)
 		}
 	}
 	for (i = 0; i < 1; i++) {
-		snprintf(str, PAGE_SIZE, "ForceTouch_ScapCB_OFF_Min_%d", (i + 1));
+		snprintf(str, sizeof(str), "ForceTouch_ScapCB_OFF_Min_%d", (i + 1));
 		dividerPos = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1263,9 +1263,9 @@ void OnInit_DThreshold_CBTest(char *strIniFile)
 	}
 
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "CB_Max_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "CB_Max_Tx%d", (i + 1));
 		dividerPos  = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1307,9 +1307,9 @@ void OnInit_DThreshold_CBTest(char *strIniFile)
 	}
 
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "CB_Min_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "CB_Min_Tx%d", (i + 1));
 		dividerPos  =  GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1356,9 +1356,9 @@ void OnInit_DThreshold_AllButtonCBTest(char *strIniFile)
 	}
 
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "CB_Max_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "CB_Max_Tx%d", (i + 1));
 		dividerPos  = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1391,9 +1391,9 @@ void OnInit_DThreshold_AllButtonCBTest(char *strIniFile)
 	}
 
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "CB_Min_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "CB_Min_Tx%d", (i + 1));
 		dividerPos  =  GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1456,9 +1456,9 @@ void OnThreshold_VkAndVaRawDataSeparateTest(char *strIniFile)
 
 
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "RawData_Max_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "RawData_Max_Tx%d", (i + 1));
 		dividerPos  = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
@@ -1498,9 +1498,9 @@ void OnThreshold_VkAndVaRawDataSeparateTest(char *strIniFile)
 	}
 
 	for (i = 0; i < test_data.screen_param.tx_num + 1; i++) {
-		snprintf(str, PAGE_SIZE, "RawData_Min_Tx%d", (i + 1));
+		snprintf(str, sizeof(str), "RawData_Min_Tx%d", (i + 1));
 		dividerPos  = GetPrivateProfileString("SpecialSet", str, "NULL", strTemp, strIniFile);
-		snprintf(strValue, PAGE_SIZE, "%s", strTemp);
+		snprintf(strValue, sizeof(strValue), "%s", strTemp);
 		if (0 == dividerPos)
 			continue;
 		index = 0;
