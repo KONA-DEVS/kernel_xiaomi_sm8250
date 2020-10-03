@@ -1,9 +1,3 @@
-#
-# Makefile for the focaltech touchscreen drivers.
-#
+# SPDX-License-Identifier: GPL-2.0-only
 
-# Each configuration option enables a list of files.
-
-
-obj-$(CONFIG_TOUCHSCREEN_FTS) += focaltech_upgrade_ft8719.o
-obj-$(CONFIG_TOUCHSCREEN_FTS) += focaltech_upgrade_ft5452.o
+obj-$(CONFIG_TOUCHSCREEN_FTS) += focaltech_upgrade_ft3518.o
