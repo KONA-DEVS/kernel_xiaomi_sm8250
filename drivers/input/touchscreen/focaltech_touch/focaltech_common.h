@@ -176,3 +176,4 @@ struct ts_ic_info {
 #define FTS_ERROR(fmt, args...) printk(KERN_ERR "[FTS][Error]"fmt"\n", ##args)
 
 #endif /* __LINUX_FOCALTECH_COMMON_H__ */
+

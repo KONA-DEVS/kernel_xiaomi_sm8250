@@ -394,3 +394,4 @@ int fts_ex_mode_recovery(struct i2c_client *client)
 
 	return ret;
 }
+

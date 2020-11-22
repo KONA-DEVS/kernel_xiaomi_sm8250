@@ -322,3 +322,4 @@ struct device *fts_get_dev(void);
 
 
 #endif /* __LINUX_FOCALTECH_CORE_H__ */
+
