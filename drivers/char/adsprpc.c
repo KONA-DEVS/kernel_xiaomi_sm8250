@@ -377,7 +377,6 @@ struct fastrpc_apps {
 	/* Unique job id for each message */
 	uint64_t jobid[NUM_CHANNELS];
 	struct wakeup_source *wake_source;
-	struct qos_cores silvercores;
 	uint32_t max_size_limit;
 };
 
