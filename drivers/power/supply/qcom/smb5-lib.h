@@ -527,6 +527,7 @@ struct smb_charger {
 	int			otg_delay_ms;
 	int			weak_chg_icl_ua;
 	int			thermal_fcc_override;
+	u32			sdam_base;
 	bool			pd_not_supported;
 	bool			batt_verified;
 

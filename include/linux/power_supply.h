@@ -437,6 +437,8 @@ enum power_supply_property {
 	POWER_SUPPLY_PROP_RESET_DIV_2_MODE,
 	POWER_SUPPLY_PROP_AICL_ENABLE,
 	POWER_SUPPLY_PROP_OTG_STATE,
+	POWER_SUPPLY_PROP_CHARGER_STATUS,
+
 	/* Local extensions of type int64_t */
 	POWER_SUPPLY_PROP_CHARGE_COUNTER_EXT,
 	/* Properties of type `const char *' */
