@@ -48,26 +48,26 @@
 			timing@0{
 				qcom,mdss-dsi-panel-width = <1080>;
 				qcom,mdss-dsi-panel-height = <2400>;
-				qcom,mdss-dsi-h-front-porch = <64>;
-				qcom,mdss-dsi-h-back-porch = <64>;
-				qcom,mdss-dsi-h-pulse-width = <20>;
+				qcom,mdss-dsi-h-front-porch = <42>;
+				qcom,mdss-dsi-h-back-porch = <42>;
+				qcom,mdss-dsi-h-pulse-width = <12>;
 				qcom,mdss-dsi-h-sync-skew = <0>;
-				qcom,mdss-dsi-v-back-porch = <34>;
-				qcom,mdss-dsi-v-front-porch = <34>;
-				qcom,mdss-dsi-v-pulse-width = <20>;
+				qcom,mdss-dsi-v-back-porch = <42>;
+				qcom,mdss-dsi-v-front-porch = <42>;
+				qcom,mdss-dsi-v-pulse-width = <12>;
 				qcom,mdss-dsi-h-sync-pulse = <0>;
 				qcom,mdss-dsi-h-left-border = <0>;
 				qcom,mdss-dsi-h-right-border = <0>;
 				qcom,mdss-dsi-v-top-border = <0>;
 				qcom,mdss-dsi-v-bottom-border = <0>;
-				qcom,mdss-dsi-panel-framerate = <60>;
-				qcom,mdss-dsi-panel-clockrate = <1106000000>;
+				qcom,mdss-dsi-panel-framerate = <66>;
+				qcom,mdss-dsi-panel-clockrate = <1216600000>;
 				qcom,mdss-dsi-panel-jitter = <0x5 0x1>;
 				qcom,mdss-dsi-on-command = [
 					05 01 00 00 0A 00 02 11 00
 					39 00 00 00 00 00 03 F0 5A 5A
 					39 00 00 00 00 00 02 35 00
-					39 00 00 00 00 00 03 B7 01 4B
+					39 00 00 00 00 00 03 B7 01 5A
 					39 01 00 00 00 00 03 F0 A5 A5
 					39 01 00 00 00 00 05 2B 00 00 09 5F
 					39 00 00 00 00 00 03 F0 5A 5A
